@@ -45,7 +45,8 @@ GLOBAL OPTIONS:
 ### 获取系统的内存信息
 
 ```
-apps ~$ sudo ./kman -mem
+$ ./kman -mem
+
 +--------+-----------+--------+--------+
 | TOTAL  | AVAILABLE |  FREE  |  USED  |
 +--------+-----------+--------+--------+
@@ -56,7 +57,8 @@ apps ~$ sudo ./kman -mem
 ### 获取系统的CPU信息
 
 ```
-apps ~$ sudo ./kman -cpu
+$ ./kman -cpu
+
 +------+------+--------+--------+-----------------+------+--------+
 | CPU  | USER | SYSTEM |  IDLE  | IDLE PERCENTAGE | NICE | IOWAIT |
 +------+------+--------+--------+-----------------+------+--------+
@@ -68,6 +70,8 @@ apps ~$ sudo ./kman -cpu
 ### 获取系统的磁盘使用情况
 
 ```
+$ ./kman -disk
+
 +-------+-------+--------+-------------+
 | TOTAL | FREE  |  USED  | USEDPERCENT |
 +-------+-------+--------+-------------+
@@ -80,7 +84,8 @@ apps ~$ sudo ./kman -cpu
 ps : 进程名称为模糊搜索
 
 ```
-apps ~$ sudo ./kman -pname docker
+$ ./kman -pname docker
+
 +------+-----------------+--------+
 | PID  |      NAME       | PARENT |
 +------+-----------------+--------+
@@ -92,10 +97,15 @@ apps ~$ sudo ./kman -pname docker
 ### 根据端口号获取所属进程的信息
 
 ```
-apps ~$ sudo ./kman -port 22
+$ ./kman -port 22
+
 +------+------+------+--------+
 | PID  | NAME | PORT | STATUS |
 +------+------+------+--------+
 | 1269 | sshd |   22 | LISTEN |
 +------+------+------+--------+
+```
+
+```
+可以通过 $ ./kman -port all 获取所有端口信息
 ```
