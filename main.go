@@ -1,7 +1,6 @@
 package main
 
 import (
-	"errors"
 	"github.com/codegangsta/cli"
 	"os"
 	"study2016/kman/proc"
