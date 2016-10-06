@@ -43,7 +43,7 @@ func appAction(c *cli.Context) (err error) {
 		netstatinfo := proc.NewNetstatInfo()
 		netstatinfo.GetNetstatInfo(kport)
 	}
-	return errors.New("use command --help ")
+	return nil
 }
 
 func main() {
