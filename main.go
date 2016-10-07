@@ -2,8 +2,8 @@ package main
 
 import (
 	"github.com/codegangsta/cli"
+	"github.com/phillihq/kman/proc"
 	"os"
-	"study2016/kman/proc"
 )
 
 //应用启动Action

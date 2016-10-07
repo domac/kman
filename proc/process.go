@@ -17,7 +17,7 @@ type ProcessInfo struct {
 
 func NewProcessInfo() *ProcessInfo {
 	return &ProcessInfo{
-		Properties: []string{"pid", "name", "parent"},
+		Properties: []string{"pid", "name", "parent", "Username"},
 		Writer:     os.Stdout,
 	}
 }
@@ -35,6 +35,8 @@ func (self *ProcessInfo) GetProcessInfo(name string) {
 		proc, _ := process.NewProcess(pid)
 		pname := getStringVal(proc.Name())
 
+		username, _ := proc.Username()
+
 		t_pname := strings.ToUpper(pname)
 		t_name := strings.ToUpper(name)
 
@@ -43,7 +45,7 @@ func (self *ProcessInfo) GetProcessInfo(name string) {
 		}
 
 		ppid := getInt32Val(proc.Ppid())
-		data := []string{strconv.Itoa(int(pid)), pname, ppid}
+		data := []string{strconv.Itoa(int(pid)), pname, ppid, username}
 		table.Append(data)
 	}
 
