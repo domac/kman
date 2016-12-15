@@ -112,7 +112,7 @@ $ ./kman -port 22
 ```
 
 
-### 根据TIME_WAIT情况
+### 获取TIME_WAIT情况
 
 ```
 $ ./kman -tw
