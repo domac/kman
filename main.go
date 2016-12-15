@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/codegangsta/cli"
-	"github.com/phillihq/kman/proc"
+	"github.com/domac/kman/proc"
 	"os"
 )
 
@@ -14,6 +14,7 @@ func appAction(c *cli.Context) (err error) {
 	diskFlag := c.Bool("disk")
 	kname := c.String("pname")
 	kport := c.String("port")
+	tw := c.Bool("tw")
 
 	if memFlag {
 		//列出内存的详细信息
@@ -42,6 +43,12 @@ func appAction(c *cli.Context) (err error) {
 		netstatinfo := proc.NewNetstatInfo()
 		netstatinfo.GetNetstatInfo(kport)
 	}
+
+	if tw {
+		timewaitinfo := proc.NewTimeWaitInfo()
+		timewaitinfo.GetTimeWaitInfo()
+	}
+
 	return nil
 }
 

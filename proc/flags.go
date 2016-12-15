@@ -31,4 +31,9 @@ func FlagsInit() {
 		Name:  "port",
 		Usage: "find the process with portl; eg: --port 8080 or --port all",
 	})
+
+	AddFlagBool(cli.BoolFlag{
+		Name:  "tw",
+		Usage: "get the tcp timewait info",
+	})
 }
