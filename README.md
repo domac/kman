@@ -26,17 +26,18 @@ USAGE:
    kman [global options] command [command options] [arguments...]
 
 VERSION:
-   0.1.0
+   0.5.0
 
 COMMANDS:
    help, h	Shows a list of commands or help for one command
 
 GLOBAL OPTIONS:
-   --mem		display the system memory info
+     --mem		display the system memory info
    --cpu		display the system cpu info
    --disk		display the system disk info
    --pname 		find the process with name
    --port 		find the process with portl; eg: --port 8080 or --port all
+   --tw			get the tcp timewait info
    --help, -h		show help
    --version, -v	print the version
 ```
@@ -108,4 +109,17 @@ $ ./kman -port 22
 
 ```
 可以通过 $ ./kman -port all 获取所有端口信息
+```
+
+
+### 根据TIME_WAIT情况
+
+```
+$ ./kman -tw
+
++--------+------------+----------+------------+-------------+
+| LISTEN | FIN WAIT 2 | LAST ACK | CLOSE WAIT | ESTABLISHED |
++--------+------------+----------+------------+-------------+
+|      5 |          5 |        1 |          5 |          28 |
++--------+------------+----------+------------+-------------+
 ```
